@@ -1,0 +1,26 @@
+local whitelist = {
+    "K0MAB",
+    "0XEZC",
+    "25QTO",
+    "LynnxDHAlt"
+}
+
+local playerName = game.Players.LocalPlayer.Name
+
+local isWhitelisted = false
+for , name in pairs(whitelist) do
+    if tostring(playerName) == tostring(name) then
+        isWhitelisted = true
+    end
+end
+
+if isWhitelisted then
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "xezc | whitelist",
+    Text = "access granted",
+    Icon = "rbxassetid://17258344392",
+    Duration = 5
+})
+else
+game.Players.LocalPlayer:Kick("xezc | whitelist access denied")
+end
